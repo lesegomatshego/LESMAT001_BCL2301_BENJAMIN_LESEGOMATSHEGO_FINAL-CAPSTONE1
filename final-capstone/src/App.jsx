@@ -1,17 +1,20 @@
 import React from 'react';
 import Preview from './Components/preview';
-// import Show from './Components/show';
 import './App.css'
+import Data from'./Components/Data';
 
 
-const App = () => {
+
+
+const App =() => {
+
   return (
     <div>
       <Preview />
-      
-    </div>
-  );
-};
+      </div>
+  )
+}
+
 
 export default App;
 

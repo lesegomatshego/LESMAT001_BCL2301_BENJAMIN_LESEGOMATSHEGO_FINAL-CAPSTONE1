@@ -1,4 +1,4 @@
-import react from "react"
+import React from "react"
 
 export default function Data() {
 const [podcastData, setPodcastData] = React.useState({  })
@@ -8,4 +8,11 @@ const [podcastData, setPodcastData] = React.useState({  })
         .then(data => podcastData (data))
 
 }
-     
+
+fetch("https://podcast-api.netlify.app/id/<ID>")
+.then(res => res.json())
+        .then(data => podcastData (data))
+
+
+
+  
