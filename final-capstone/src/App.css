@@ -1,21 +1,22 @@
-/* styles.css */
+/* styles.css
 
 .size {
   max-width: 800px;
   margin: 0 auto;
 }
+.layout li{
+  border: 5px solid rgb(255, 77, 1);
+}
 
-
-
-.layout li {
+/*  */
+/* .layout {
+  display: flexbox;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-.list__items {
+.div__items {
   display: grid;
   padding: 2rem 1rem;
   grid-template-columns: 1fr;
@@ -23,37 +24,59 @@
   grid-row-gap: 0.5rem;
   margin: 0 auto;
   width: 100%;
-}
-.layout li:hover {
-  transform: translateY(-5px);
+
 }
 
-.image {
+.layout li:hover {
+  transform: scale(1.1); 
+} */
+
+img{
   width: 200px;
   height: auto;
+  cursor: pointer;
 }
 
 h1 {
   text-align: center;
   font-size: 24px;
   font-family:Arial, Helvetica, sans-serif;
-}
+} */
 
 body{
   
-  background-color:black;
+  background-color:rgb(196, 82, 82);
   color: aliceblue;
   font-style:italic,white;
 }
-li.hovered .image {
-  
-  /* For example, you can add a border to indicate it's selected */
-  border: 2px solid orangered;
+
+.buto {
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+gap: 10px;
+width: 100px;
 }
 
+
 /* Optional: Add more styles to customize the appearance */
-button {
-  margin-top: 10px;
-  color:yellow;
+
+
+/* Favorites.css */
+button{
+
+
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 7px;
+  cursor: pointer;
+
 }
+
+
+
+
+
 
