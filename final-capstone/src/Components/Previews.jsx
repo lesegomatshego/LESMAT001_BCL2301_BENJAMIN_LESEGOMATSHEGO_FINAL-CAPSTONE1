@@ -81,7 +81,7 @@ const Preview = () => {
         preview.genres.includes(parseInt(selectedGenre))
       );
     }
-
+   
     // Sort the previews based on sortBy
     if (sortBy === 'title') {
       filteredPreviews.sort((a, b) => a.title.localeCompare(b.title));
@@ -107,6 +107,10 @@ const Preview = () => {
   if (loadingPreview) {
     return <div>Loading...</div>;
   }
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  };
 
   if (!showData) {
     return (
@@ -142,7 +146,7 @@ const Preview = () => {
         {/* Header Component */}
         <ul className="prev">
           {filteredPreviews.map((show) => (
-            <li key={show.id} className="preview-item">
+            <div key={show.id} className="preview-item">
               <div className="image">
                 <img src={show.image} alt={show.title} className="preview-image" />
                 <div className="dots">
@@ -157,7 +161,7 @@ const Preview = () => {
                 <p>Seasons: {show.seasons}</p>
                 {/* Toggle description visibility */}
                 {descriptionVisible && <p>Description: {show.description}</p>}
-                Last Updated: {show.updated}
+                <p>Last Updated:{formatDate(show.updated)} </p>
               </div>
               <div className='buto'>
                 <button onClick={() => handleShowClick(show.id)}>Seasons</button>
@@ -166,7 +170,7 @@ const Preview = () => {
                   {descriptionVisible ? 'Hide Description' : 'Show Description'}
                 </button>
               </div>
-            </li>
+            </div>
           ))}
         </ul>
       </div>
@@ -174,7 +178,7 @@ const Preview = () => {
   }
 
   return (
-    <div className="seas-data-container">
+    <div className="season-page">
       <button onClick={() => setShowData(null)}>Back to Show List</button>
       <div>
         <h2>{showData.title}</h2>
