@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Preview from './Components/Previews';
 import Navbar from './Components/Navbar';
 import Login from './Components/Login';
+import Carousel from './Components/Hero';
 //import { ClassNames } from '@emotion/react';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <nav>
             <Navbar />
           </nav>
+          <Carousel />
           <Preview />
         </div>
       
