@@ -82,3 +82,23 @@ ul {
   flex-basis: 300px;
   margin: 10px;
 }
+
+nav {
+  display: flex;
+  align-items: center;
+  background-color:rgb(44, 55, 55) ;
+  height: 90px;
+  padding: 30px 25px;
+}
+h1{
+  font-style:italic;
+  font-family:'Courier New', Courier, monospace;
+  font-size:xx-large;
+  color: rgb(242, 55, 117);
+}
+  
+.nav--icon {
+  border: radius 3px; ;
+  height: 70px;
+  margin-right: 7px;
+}
