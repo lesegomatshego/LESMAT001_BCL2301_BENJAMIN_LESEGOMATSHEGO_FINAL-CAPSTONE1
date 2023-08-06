@@ -2,6 +2,7 @@ import React, { useEffect, useState, Fragment } from 'react';
 import Fuse from 'fuse.js';
 import axios from 'axios';
 
+
 const Preview = () => {
   const [previewData, setPreviewData] = useState([]);
   const [showData, setShowData] = useState(null);

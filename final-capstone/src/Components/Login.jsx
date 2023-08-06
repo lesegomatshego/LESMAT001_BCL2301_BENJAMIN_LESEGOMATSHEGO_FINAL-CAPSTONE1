@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { supabase } from '../supabase';
+import { supabase } from '../SupabaseClient';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
 import { Auth } from '@supabase/auth-ui-react';
 

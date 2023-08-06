@@ -3,51 +3,37 @@ import Preview from './Components/Previews';
 import Navbar from './Components/Navbar';
 import Login from './Components/Login';
 import Carousel from './Components/Hero';
-//import { ClassNames } from '@emotion/react';
+import { supabase } from "./SupabaseClient";
+import SupabaseClient from "./SupabaseClient";
+import './Components/App.css';
+
+
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleSession = (session) => {
-    if (session?.user) {
-      setIsLoggedIn('startPhase');
-    } else {
-      setIsLoggedIn(false);
-    }
-  };
-
+  const [throwSignUp, setThrowSignUp] = useState("signUpPhase");
+  React.useEffect(() => {
+    const authListener = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_IN" && session) {
+        console.log("User signed in successfully:", session.user.email);
+        setThrowSignUp("PreviewPhase");
+      }
+    });
+    return () => {
+      authListener.unsubscribe;
+    };
+  }, []);
   return (
     <div>
-      {/* {isLoggedIn === "signUpPhase" && <Login />}
-      {isLoggedIn ==  'startPhase' &&  */}
-
-        <div>
-          <nav>
-            <Navbar />
-          </nav>
-          <Carousel />
-          <Preview />
-        </div>
+    {throwSignUp === 'signUpPhase' && <SupabaseClient />}
+      {throwSignUp === 'PreviewPhase' &&
+    <div>
       
+      <Navbar />
+      <Carousel />
+      <Preview />
     </div>
-    
+  }
+  </div>
   );
-  
-};
-
-export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+export default App
