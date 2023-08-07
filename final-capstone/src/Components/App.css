@@ -86,7 +86,8 @@ ul {
 
 nav {
   display: flex;
-  align-items: right;
+  flex-direction: row;
+  
   background-color:rgb(104, 186, 186) ;
   height: 90px;
   padding: 30px 25px;

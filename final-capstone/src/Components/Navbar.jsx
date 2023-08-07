@@ -24,10 +24,7 @@ return (
         <h1>LESPODCAST</h1>
 
         <div className="nav--buttons">
-          <button className="nav--button" onClick={handleSearchClick}>
-            <img src={searchIcon} alt="Search Icon" className="nav--icon" />
-            Search
-          </button>
+
           
 
           <button className="nav--button" onClick={handleFavoriteClick}>
