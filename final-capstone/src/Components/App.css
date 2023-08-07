@@ -1,10 +1,15 @@
 
 /* Set background color to black and text color to white */
 body {
-  background-color: black;
+  background-color: rgb(21, 18, 18);
   color: white;
-  
+  background-image: url(../images/mic.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
+  
+
 /* Style each individual preview item */
 .preview-item {
   width: 300px;
@@ -81,8 +86,8 @@ ul {
 
 nav {
   display: flex;
-  align-items: center;
-  background-color:rgb(44, 55, 55) ;
+  align-items: right;
+  background-color:rgb(104, 186, 186) ;
   height: 90px;
   padding: 30px 25px;
 }
@@ -91,11 +96,50 @@ h1{
   font-family:'Courier New', Courier, monospace;
   font-size:xx-large;
   color: rgb(242, 55, 117);
+  font-weight: 700;
+  margin-right: 8px;
 }
-  
+.nav--buttons{
+  display: flex;
+
+}
+
+.nav--button {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  margin-right:7px;
+  border: none;
+  background-color: #555;
+  color:rgb(242, 55, 117);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav--button img {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px
+}
 .nav--icon {
-  border: radius 3px; ;
-  height: 70px;
-  margin-right: 7px;
+  width: 30 px; 
+  height: 30px;
+  margin-right: 8px;
+}
+
+
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-header {
+  padding: 16px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
 }
 

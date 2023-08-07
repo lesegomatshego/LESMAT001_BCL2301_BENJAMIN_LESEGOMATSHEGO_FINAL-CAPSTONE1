@@ -3,11 +3,12 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
 import axios from "axios";
 import "./Hero.css";
+
 export default function Hero() {
   const [shows, setShows] = useState([]);
   const [carouselPosition, setCarouselPosition] = useState(0);
   const slideWidth = 200;
-  const slidesToShow = 5;
+  const slidesToShow = 4;
   const containerWidth = slideWidth * shows.length;
   useEffect(() => {
     axios
@@ -36,11 +37,13 @@ export default function Hero() {
       <div className="carousel-container">
         <div
           className="show-info"
+          
           style={{
             transform: `translateX(${carouselPosition}px)`,
             width: `${containerWidth}px`,
           }}
         >
+          
           {shows.map((show) => (
             <div key={show.id} className="carousel-slide">
               <img src={show.image} alt={show.name} width={slideWidth} />

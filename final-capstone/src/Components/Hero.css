@@ -1,6 +1,6 @@
 .hero-section {
     position: relative;
-    display: flex;
+    display:flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
@@ -19,13 +19,14 @@
     width: 200px;
     padding: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
+    flex-wrap: wrap;
     align-items: center;
   }
   .carousel-slide img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 20px;
   }
   .arrow-icon {
     font-size: 40px;

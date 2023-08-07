@@ -18,6 +18,7 @@ const App = () => {
         setThrowSignUp("PreviewPhase");
       }
     });
+    
     return () => {
       authListener.unsubscribe;
     };
