@@ -4,11 +4,12 @@ import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutl
 import axios from "axios";
 import "./Hero.css";
 
+//variables
 export default function Hero() {
   const [shows, setShows] = useState([]);
   const [carouselPosition, setCarouselPosition] = useState(0);
   const slideWidth = 200;
-  const slidesToShow = 4;
+  const slidesToShow = 5;
   const containerWidth = slideWidth * shows.length;
   useEffect(() => {
     axios

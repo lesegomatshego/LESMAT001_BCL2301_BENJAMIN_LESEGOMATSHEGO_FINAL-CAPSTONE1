@@ -18,7 +18,7 @@ const App = () => {
         setThrowSignUp("PreviewPhase");
       }
     });
-    
+
     return () => {
       authListener.unsubscribe;
     };
@@ -32,6 +32,7 @@ const App = () => {
       <Navbar />
       <Carousel />
       <Preview />
+      
     </div>
   }
   </div>

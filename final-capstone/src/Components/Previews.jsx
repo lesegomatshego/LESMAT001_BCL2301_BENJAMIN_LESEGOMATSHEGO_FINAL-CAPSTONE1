@@ -3,7 +3,7 @@ import Fuse from 'fuse.js';
 import axios from 'axios';
 
 
-
+// state variables
 const Preview = () => {
   const [previewData, setPreviewData] = useState([]);
   const [showData, setShowData] = useState(null);
@@ -19,7 +19,7 @@ const Preview = () => {
   const [selectedGenre, setSelectedGenre] = useState(null);
   const [filteredData, setFilteredData] = useState([]); // New state variable for filtered data
   const [descriptionVisible, setDescriptionVisible] = useState(false); // State for description visibility
-
+//Genre titles
   const genreTitleMapping = {
     1: 'Personal Growth',
     2: 'True Crime and Investigative Journalism',
@@ -31,7 +31,7 @@ const Preview = () => {
     8: 'News',
     9: 'Kids and Family',
   };
-
+//fetched the shows
   useEffect(() => {
     fetch('https://podcast-api.netlify.app/shows')
       .then((response) => response.json())
@@ -41,7 +41,7 @@ const Preview = () => {
       })
       .catch((error) => console.error('Error fetching previews:', error));
   }, []);
-
+//fetched the showID
   const fetchShowDetails = async (showId) => {
     try {
       setLoadingShow(true);
@@ -55,15 +55,15 @@ const Preview = () => {
       setLoadingShow(false);
     }
   };
-
+//BELOW shows the show details
   const handleShowClick = (showId) => {
     fetchShowDetails(showId);
   };
-
+//season numbers
   const handleSeasonClick = (seasonNumber) => {
     setSelectedSeason(seasonNumber);
   };
-
+//sort by and select different genres
   useEffect(() => {
     filterPreviews();
   }, [searchQuery, sortBy, previewData, selectedGenre]); // Update dependencies
@@ -105,7 +105,11 @@ const Preview = () => {
   const handleSortChange = (e) => {
     setSortBy(e.target.value);
   };
-
+//the loading state
+//The component conditionally renders different views based on the loadingPreview, loadingShow, and showData states.
+//While the previews are loading, it displays "Loading...".
+//If showData is null, it renders the list of filtered podcast show previews along with search input, genre filter, and sort options.
+//If showData is not null, it displays the details of the selected show, including its seasons and episodes.
   if (loadingPreview) {
     return <div>Loading...</div>;
   }
@@ -178,7 +182,7 @@ const Preview = () => {
       </div>
     );
   }
-
+//shows differnt seasons
   return (
     <div className="season-page">
       <button onClick={() => setShowData(null)}>Back to Show List</button>
