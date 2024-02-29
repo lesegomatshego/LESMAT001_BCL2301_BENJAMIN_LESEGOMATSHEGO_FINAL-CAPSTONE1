@@ -92,6 +92,7 @@ nav {
   height: 90px;
   padding: 30px 25px;
 }
+
 h1{
   font-style:italic;
   font-family:'Courier New', Courier, monospace;
@@ -102,7 +103,6 @@ h1{
 }
 .nav--buttons{
   display: flex;
-
 }
 
 .nav--button {
@@ -122,13 +122,12 @@ h1{
   height: 18px;
   margin-right: 8px
 }
+
 .nav--icon {
   width: 30 px; 
   height: 30px;
   margin-right: 8px;
 }
-
-
 
 .login {
   display: flex;
